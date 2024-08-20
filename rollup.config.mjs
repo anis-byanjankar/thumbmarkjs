@@ -5,7 +5,16 @@ import json from '@rollup/plugin-json'
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
-import typescript from '@rollup/plugin-typescript'
+import typescript from '@rollup/plugin-typescript';
+import {obfuscator} from 'rollup-obfuscator'
+
+
+const obfuscatorConfig = {
+  controlFlowFlattening: true,
+  controlFlowFlatteningThreshold: 0.9,
+  deadCodeInjection: true,
+  deadCodeInjectionThreshold: 0.9
+}
 
 const config = [
   {
@@ -31,6 +40,7 @@ const config = [
     plugins: [
       resolve(), // so Rollup can find `ms`
       commonjs(), // so Rollup can convert `ms` to an ES module
+      obfuscator(obfuscatorConfig),
       typescript(),
       json(),
       terser() // minify, but only in production
