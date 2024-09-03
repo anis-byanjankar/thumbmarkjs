@@ -6,12 +6,13 @@ function getSystemDetails(): Promise<componentInterface> {
         const browser = getBrowser()
         resolve( {
         'platform': window.navigator.platform,
-        'cookieEnabled': window.navigator.cookieEnabled,
+        //'cookieEnabled': window.navigator.cookieEnabled,
         'productSub': navigator.productSub,
         'product': navigator.product,
         'useragent': navigator.userAgent,
         'hardwareConcurrency': navigator.hardwareConcurrency,
-        'browser': {'name': browser.name, 'version': browser.version },
+        //'browser': {'name': browser.name, 'version': browser.version },
+        'browser': {'name': browser.name },
         'applePayVersion': getApplePayVersion()
     });
 });

@@ -55,4 +55,4 @@ async function getBrowserPermissionsOnce(): Promise<componentInterface> {
     return permissionStatus;
 }
 
-includeComponent("permissions", getBrowserPermissions);
+// includeComponent("permissions", getBrowserPermissions);

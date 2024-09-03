@@ -19,4 +19,4 @@ export default function getInstalledPlugins(): Promise<componentInterface> {
   });
   }
   
-  includeComponent('plugins', getInstalledPlugins);
+  // includeComponent('plugins', getInstalledPlugins);
